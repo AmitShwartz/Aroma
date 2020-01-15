@@ -31,13 +31,10 @@ class Category
     }
 
     // Get Single Category
-    public function read_single()
+    public function read_items()
     {
         // Create query
-        $query = 'SELECT
-          id,
-          title,
-          image
+        $query = 'SELECT *
         FROM
           ' . $this->table . '
       WHERE id = ?

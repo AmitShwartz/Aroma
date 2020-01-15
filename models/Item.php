@@ -69,6 +69,32 @@ class Item
         $this->category_id = $row['category_id'];
     }
 
+    // Get by category id
+    public function read_by_category()
+    {
+        // Create query
+        $query = 'SELECT 
+            c.title AS category_title,
+            i.id,
+            i.title,
+            i.description,
+            i.image,
+            i.category_id    
+         FROM ' . $this->table . ' i 
+         LEFT JOIN
+         categories c ON i.category_id = c.id
+            WHERE i.category_id = ?';
+
+        //Prepare statement
+        $statement = $this->conn->prepare($query);
+        // Bind category_id
+        $statement->bindParam(1, $this->category_id);
+        //Execute query
+        $statement->execute();
+
+        return $statement;
+    }
+
     // Create Item
     public function create()
     {
