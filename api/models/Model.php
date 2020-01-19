@@ -2,8 +2,8 @@
 class Model
 {
     // DB
-    private $conn;
-    private $table;
+    protected $conn;
+    protected $table;
 
     // Properties
     public $columns;
@@ -95,12 +95,11 @@ class Model
         if ($statement->execute()) {
             return true;
         }
-        // Print error if something goes wrong
         printf("Error: %s.\n", $statement->error);
         return false;
     }
 
-    private function executeStatement($query){
+    protected function executeStatement($query){
         //Prepare statement
         $statement = $this->conn->prepare($query);
 
