@@ -2,29 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a56a281-e99a-427c-8383-8ac7028e3168" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/1.0/categories/controllers.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/1.0/categories/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/1.0/contents/controllers.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/1.0/contents/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/headers.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/config/headers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/items/create/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/items/delete/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/items/read/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/items/read_by_category/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/items/read_single/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/items/update/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/messages/create/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/messages/delete/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/messages/read/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/messages/read_single/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/messages/update/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/models/Category.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/models/Content.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/models/Item.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/models/Message.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/models/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/js/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/js/navigation.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +78,8 @@
       <workItem from="1579097322386" duration="3488000" />
       <workItem from="1579173178048" duration="19765000" />
       <workItem from="1579336324873" duration="11052000" />
-      <workItem from="1579356512293" duration="6758000" />
+      <workItem from="1579356512293" duration="14879000" />
+      <workItem from="1579552625177" duration="4764000" />
     </task>
     <servers />
   </component>
@@ -116,10 +99,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="477" y="265" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1579003589025" />
-    <state x="337" y="166" key="com.intellij.ide.util.TipDialog" timestamp="1579356539567">
+    <state x="337" y="166" key="com.intellij.ide.util.TipDialog" timestamp="1579552625903">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="337" y="166" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1579356539567" />
+    <state x="337" y="166" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1579552625903" />
     <state x="297" y="151" key="run.anything.popup" timestamp="1578994412459">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

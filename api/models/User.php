@@ -42,4 +42,32 @@ class User extends Model {
         printf("Error: %s.\n", $statement->error);
         return false;
     }
+
+    public function nameExists(){
+        // query to check if name exists
+        $query = "SELECT *
+            FROM " . $this->table . "
+            WHERE name = ?
+            LIMIT 0,1";
+
+        //Prepare statement
+        $statement = $this->conn->prepare($query);
+        // sanitize
+        $this->columns['name']=htmlspecialchars(strip_tags($this->columns['name']));
+        // Bind ID
+        $statement->bindParam(1, $this->columns['name']);
+        // Execute query
+        $statement->execute();
+
+        if($statement->rowCount()>0){
+            $row = $statement->fetch(PDO::FETCH_ASSOC);
+
+            // Set properties
+            foreach ($row as $key=> $value){
+                $this->columns[$key]= $value;
+            }
+            return true;
+        }
+        return false;
+    }
 }
