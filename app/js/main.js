@@ -15,6 +15,21 @@ $(() => {
             }
         });
     });
+    const categories = JSON.parse(localStorage['categories']);
+    $("#content").html(
+        '<h1>Menu</h1>' +
+        '<div id=categories class=card-group></div>'
+    );
+    renderCategories();
+
+    $.each(categories, (i, category) => {
+        $('#side-menu').append(
+            '<li id= ' + i + '>' +
+            '<a href=#>' + category.title + ' </a>' +
+            '</li>')
+    });
+    categoryClicked("side-menu","li");
+
     const contents = JSON.parse(localStorage['contents']);
     $.each(contents, (i, content) => {
         nav.append(
@@ -22,6 +37,14 @@ $(() => {
             '<a href=#>' + content.title + ' </a>' +
             '</li>'
         );
+        if( content.title == 'Menu'){
+            $("#content").html(
+                '<h1>' + content.title + '</h1>' +
+                ' <p class=lead>' + content.info + '</p>' +
+                '<div id=categories class=card-group></div>'
+            );
+            renderCategories();
+        }
     });
     $("#nav").on('click', 'li', function () {
 
@@ -33,7 +56,33 @@ $(() => {
                     ' <p class=lead>' + contents[id].info + '</p>' +
                     '<div id=categories class=card-group></div>'
                 );
-                getCategories();
+                renderCategories();
+                break;
+            case 'Admin':
+                window.location.href='http://localhost/aroma/app/admin';
+                break;
+            case "Contact Us":
+                $("#content").html(
+                    '<h1>' + contents[id].title + '</h1>' +
+                    ' <p class=lead>' + contents[id].info + '</p>' +
+                    '<div id=categories class=card-group></div>'+
+                    '<form>\n' +
+                    '  <div class="form-group">\n' +
+                    '    <label for="cause">cause</label>\n' +
+                    '    <select class="form-control" id="cause">\n' +
+                    '      <option>mistaken idea of denouncing pleasure and praising</option>\n' +
+                    '      <option>Nor again is there anyone </option>\n' +
+                    '      <option>except to obtain some</option>\n' +
+                    '      <option>Other</option>\n' +
+                    '    </select>\n' +
+                    '  </div>\n' +
+                    '  <div class="form-group">\n' +
+                    '    <label for="Description">Description</label>\n' +
+                    '    <textarea class="form-control" id="Description" rows="3"></textarea>\n' +
+                    '  </div>\n' +
+                    '<button type="submit" class="btn btn-primary">Send</button>'+
+                    '</form>'
+                )
                 break;
             default:
                 $("#content").html('<h1>' + contents[id].title + '</h1> <p class=lead>' + contents[id].info + '</p>');
@@ -41,7 +90,7 @@ $(() => {
     });
 });
 
-const getCategories = () => {
+const renderCategories = () => {
     const categories = JSON.parse(localStorage['categories']);
     $.each(categories, (i, category) => {
         $("#categories ").append(
@@ -58,7 +107,12 @@ const getCategories = () => {
     $(".card-title").css("text-align", "center");
     $("#content div .card").css("display", "inline-block");
 
-    $("#categories").on('click', 'div', function () {
+    categoryClicked("categories", "div");
+};
+
+function categoryClicked(tagId, tag) {
+    const categories = JSON.parse(localStorage['categories']);
+    $("#"+tagId).on('click', tag, function () {
         const id = $(this).attr('id');
         const category_title = $("this>h4").text();
         $("#content").html(
@@ -103,4 +157,4 @@ const getCategories = () => {
         $(".card-title").css("text-align", "center");
         $("#content div .card").css("display", "inline-block");
     });
-};
+}
